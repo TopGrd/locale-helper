@@ -1,0 +1,66 @@
+{
+	"name": "locale-helper",
+	"publisher": "topgrd",
+	"displayName": "locale-helper",
+	"description": "help develop",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "extension.convertLocale",
+				"title": "locale: convert variable"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "extension.convertLocale",
+					"group": "locale"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "locale-helper",
+			"properties": {
+				"localeHelper.zhKey": {
+					"type": "string",
+					"default": "zh-cn",
+					"description": "locale 文件中中文对应的 key"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.39.0",
+		"eslint": "^6.6.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.2"
+	},
+	"dependencies": {
+		"esprima": "^4.0.1"
+	}
+}
