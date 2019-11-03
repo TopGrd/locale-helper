@@ -5,6 +5,7 @@
 ## Features
 
 选中中文添加到 locale 里, 输入 locale 自动提示
+![img](./locale.gif)
 
 ## Requirements
 

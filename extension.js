@@ -65,7 +65,7 @@ function activate(context) {
 
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
-      { language: 'javascriptreact' },
+      { scheme: 'file' },
       {
         provideCompletionItems: provideLocaleCompletion,
         resolveCompletionItem,
